@@ -1,12 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --bg: #ffffff;
-  --text: #111111;
-  --muted: #4f4f4f;
-  --border: #1a1a1a;
-  --border-soft: #d6d6d6;
-  --font-main: "Source Code Pro", "SFMono-Regular", Consolas, monospace;
+  --bg: #f5f5f3;
+  --surface: #ffffff;
+  --text: #121212;
+  --muted: #5b5b5b;
+  --border: #dcdcdc;
+  --border-strong: #bdbdbd;
+  --shadow: rgba(18, 18, 18, 0.06);
+  --font-body: "Manrope", "Helvetica Neue", sans-serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
 }
 
 * {
@@ -21,12 +24,10 @@ html {
 
 body {
   min-height: 100vh;
-  overflow-x: hidden;
   background: var(--bg);
   color: var(--text);
-  font-family: var(--font-main);
-  text-align: center;
-  line-height: 1.75;
+  font-family: var(--font-body);
+  line-height: 1.7;
 }
 
 body::before,
@@ -38,19 +39,17 @@ header::before {
 header,
 section,
 footer {
-  position: relative;
-  width: min(100%, 68rem);
+  width: min(100%, 72rem);
   margin: 0 auto;
-  padding: 3rem 1.25rem;
+  padding: 4rem 1.5rem;
 }
 
 header {
-  min-height: 70vh;
+  min-height: 72vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
 }
 
 section {
@@ -76,184 +75,198 @@ footer {
   transform: translateY(0);
 }
 
+.eyebrow,
+.project-year,
+.role,
+.tag {
+  font-family: var(--font-mono);
+}
+
 .eyebrow {
   color: var(--muted);
-  font-size: 0.88rem;
-  font-weight: 600;
+  font-size: 0.82rem;
+  font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 h1,
 h2,
-h3,
-p,
-a,
-span,
-li {
-  font-family: var(--font-main);
+h3 {
+  font-family: var(--font-body);
 }
 
 h1 {
   margin-top: 1rem;
-  font-size: clamp(2.6rem, 7vw, 4.8rem);
-  line-height: 1;
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 0.98;
+  font-weight: 800;
   letter-spacing: -0.05em;
-  font-weight: 700;
 }
 
 header h2 {
-  max-width: 42rem;
+  max-width: 40rem;
   margin-top: 1rem;
-  font-size: clamp(1.12rem, 2.2vw, 1.55rem);
-  font-weight: 500;
+  font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .hero-note {
-  max-width: 42rem;
+  max-width: 36rem;
   margin-top: 1rem;
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .divider {
   width: 100%;
-  max-width: 10rem;
-  height: 1px;
-  margin-top: 1.5rem;
-  background: var(--border);
+  max-width: 8rem;
+  height: 2px;
+  margin-top: 1.4rem;
+  background: var(--text);
 }
 
 .section-title {
   margin-bottom: 1.5rem;
-  padding: 0.8rem 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  font-size: clamp(1.35rem, 3vw, 2rem);
+  font-size: 1.45rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .project {
-  margin: 0;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--border-soft);
-}
-
-.project:last-of-type {
-  border-bottom: 0;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px var(--shadow);
 }
 
 .project-year {
   display: inline-block;
-  margin-bottom: 0.85rem;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid var(--border);
+  margin-bottom: 0.8rem;
+  color: var(--muted);
   font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .project h3 {
-  font-size: clamp(1.45rem, 3vw, 2.1rem);
+  font-size: 1.5rem;
   font-weight: 700;
+  letter-spacing: -0.03em;
 }
 
 .role {
-  margin-top: 0.45rem;
+  margin-top: 0.4rem;
   margin-bottom: 0.9rem;
   color: var(--muted);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .project p,
 .project li {
-  max-width: 44rem;
-  margin-inline: auto;
+  max-width: 42rem;
 }
 
 .project p + p {
-  margin-top: 0.8rem;
+  margin-top: 0.75rem;
 }
 
 .project ul {
-  max-width: 40rem;
-  margin: 1rem auto 0;
-  padding: 0;
   list-style: none;
 }
 
 .project li + li {
-  margin-top: 0.65rem;
+  margin-top: 0.7rem;
 }
 
 .project li::before {
-  content: ">";
+  content: "•";
   margin-right: 0.45rem;
-  font-weight: 700;
+  color: var(--text);
 }
 
-.project-links,
-.interest-list {
+.project-links {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.9rem;
   margin-top: 1.1rem;
 }
 
+.hero-actions {
+  margin-top: 1.4rem;
+}
+
 .project a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.7rem;
+  background: #ffffff;
   color: var(--text);
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 500;
   text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.15rem;
 }
 
 .project a:hover {
-  opacity: 0.7;
+  border-color: var(--text);
 }
 
 .tag {
-  display: inline-block;
-  padding: 0.28rem 0.6rem;
-  border: 1px solid var(--border);
-  font-size: 0.82rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: #f1f1f1;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
 }
 
 .skyline {
   width: 100%;
   height: 1px;
-  margin: 1rem auto 0;
+  margin-top: 1.5rem;
   background: var(--border);
 }
 
 footer {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid var(--border);
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.94rem;
 }
 
 @media (max-width: 768px) {
   header,
   section,
   footer {
-    padding-inline: 1rem;
+    padding: 2.5rem 1rem;
   }
 
   header {
     min-height: auto;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
+  }
+
+  .project {
+    padding: 1.25rem;
+  }
+
+  .project-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .project a {
+    width: 100%;
   }
 }
 
