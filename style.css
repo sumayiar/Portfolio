@@ -17,9 +17,6 @@
   --border: #dcdcdc;
   --border-strong: #bdbdbd;
   --shadow: rgba(18, 18, 18, 0.06);
-  --pink-soft: rgba(255, 179, 212, 0.18);
-  --pink-mid: rgba(255, 122, 184, 0.32);
-  --pink-strong: rgba(255, 92, 170, 0.58);
   --font-body: "Manrope", "Helvetica Neue", sans-serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
 }
@@ -42,36 +39,6 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   background-attachment: fixed;
-}
-
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-body::before {
-  background:
-    radial-gradient(circle at 12% 82%, var(--pink-mid) 0 1px, transparent 2px),
-    radial-gradient(circle at 24% 72%, var(--pink-soft) 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 40% 88%, var(--pink-mid) 0 1px, transparent 2px),
-    radial-gradient(circle at 58% 76%, var(--pink-soft) 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 74% 84%, var(--pink-mid) 0 1px, transparent 2px),
-    radial-gradient(circle at 90% 70%, var(--pink-soft) 0 1.5px, transparent 2.5px);
-  opacity: 0.9;
-}
-
-body::after {
-  background:
-    linear-gradient(118deg, transparent 42%, rgba(255, 92, 170, 0.38) 48%, rgba(255, 179, 212, 0.1) 54%, transparent 60%) 8% 88% / 18rem 18rem no-repeat,
-    linear-gradient(120deg, transparent 44%, rgba(255, 122, 184, 0.32) 49%, rgba(255, 179, 212, 0.08) 55%, transparent 61%) 36% 94% / 16rem 16rem no-repeat,
-    linear-gradient(116deg, transparent 40%, rgba(255, 92, 170, 0.3) 47%, rgba(255, 179, 212, 0.08) 53%, transparent 59%) 64% 90% / 14rem 14rem no-repeat,
-    linear-gradient(122deg, transparent 42%, rgba(255, 122, 184, 0.34) 48%, rgba(255, 179, 212, 0.1) 54%, transparent 60%) 82% 92% / 17rem 17rem no-repeat;
-  opacity: 0.85;
-  animation: shootingStars 12s linear infinite;
 }
 
 header,
@@ -333,20 +300,6 @@ header h2 {
 footer {
   color: var(--muted);
   font-size: 0.94rem;
-}
-
-@keyframes shootingStars {
-  0% {
-    transform: translate3d(0, 0, 0);
-    opacity: 0.2;
-  }
-  15% {
-    opacity: 0.75;
-  }
-  100% {
-    transform: translate3d(0, -22rem, 0);
-    opacity: 0;
-  }
 }
 
 @media (max-width: 768px) {
