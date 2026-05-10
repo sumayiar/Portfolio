@@ -231,6 +231,37 @@ header h2 {
   font-size: 0.9rem;
 }
 
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.cert-card {
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: #fcfcfc;
+}
+
+.cert-card h3 {
+  font-size: 1.2rem;
+}
+
+.cert-card p {
+  max-width: none;
+}
+
+.cert-card img {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  background: #ffffff;
+}
+
 .project p + p {
   margin-top: 0.75rem;
 }
@@ -331,6 +362,10 @@ footer {
 
   .project {
     padding: 1.25rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-links {
