@@ -41,6 +41,144 @@ body {
   background-attachment: fixed;
 }
 
+.hanging-bow {
+  --bow-scale: 1;
+  position: fixed;
+  top: 0;
+  right: clamp(1rem, 4vw, 3rem);
+  z-index: 3;
+  width: 6.25rem;
+  height: 6.5rem;
+  pointer-events: none;
+  transform: scale(var(--bow-scale));
+  transform-origin: top center;
+  animation: bowDangle 7s ease-in-out infinite;
+}
+
+.bow-string {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 2rem;
+  background: rgba(18, 18, 18, 0.38);
+}
+
+.bow-shape {
+  position: absolute;
+  top: 1.65rem;
+  left: 50%;
+  width: 5.4rem;
+  height: 3.8rem;
+  transform: translateX(-50%);
+}
+
+.bow-loop,
+.bow-knot,
+.bow-tail {
+  position: absolute;
+  background: linear-gradient(135deg, #ffd1e4 0%, #ff86bf 48%, #f04f9c 100%);
+  border: 1px solid rgba(205, 69, 134, 0.38);
+  box-shadow: 0 0.35rem 1.1rem rgba(240, 79, 156, 0.22);
+}
+
+.bow-loop {
+  top: 0.65rem;
+  width: 2.35rem;
+  height: 1.65rem;
+}
+
+.bow-loop-left {
+  left: 0.15rem;
+  border-radius: 72% 38% 66% 42%;
+  transform: rotate(-18deg);
+}
+
+.bow-loop-right {
+  right: 0.15rem;
+  border-radius: 38% 72% 42% 66%;
+  transform: rotate(18deg);
+}
+
+.bow-knot {
+  top: 0.82rem;
+  left: 50%;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #ffe0ed 0%, #ff70b4 100%);
+}
+
+.bow-tail {
+  top: 2rem;
+  width: 1.15rem;
+  height: 1.7rem;
+  clip-path: polygon(0 0, 100% 0, 78% 100%, 50% 72%, 20% 100%);
+}
+
+.bow-tail-left {
+  left: 1.7rem;
+  transform: rotate(8deg);
+}
+
+.bow-tail-right {
+  right: 1.7rem;
+  transform: rotate(-8deg);
+}
+
+.bow-sparkle {
+  position: absolute;
+  width: 0.44rem;
+  height: 0.44rem;
+  background: #ffffff;
+  box-shadow: 0 0 0.8rem rgba(255, 255, 255, 0.95), 0 0 1.2rem rgba(255, 126, 190, 0.7);
+  clip-path: polygon(50% 0, 61% 38%, 100% 50%, 61% 62%, 50% 100%, 39% 62%, 0 50%, 39% 38%);
+  opacity: 0.3;
+  animation: sparklePulse 4.8s ease-in-out infinite;
+}
+
+.sparkle-one {
+  top: 2.35rem;
+  left: 0.45rem;
+}
+
+.sparkle-two {
+  top: 1.2rem;
+  right: 0.5rem;
+  animation-delay: 1.4s;
+}
+
+.sparkle-three {
+  top: 4.6rem;
+  right: 1.25rem;
+  animation-delay: 2.6s;
+}
+
+@keyframes bowDangle {
+  0%,
+  100% {
+    transform: scale(var(--bow-scale)) rotate(-1.5deg);
+  }
+
+  50% {
+    transform: scale(var(--bow-scale)) rotate(1.5deg);
+  }
+}
+
+@keyframes sparklePulse {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scale(0.75) rotate(0deg);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1.2) rotate(45deg);
+  }
+}
+
 header,
 section,
 footer {
@@ -329,6 +467,13 @@ footer {
   .project a {
     width: 100%;
   }
+
+  .hanging-bow {
+    --bow-scale: 0.82;
+    right: 0.75rem;
+    width: 4.8rem;
+    height: 5.25rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -346,5 +491,10 @@ footer {
   .skyline,
   footer {
     transition: none;
+  }
+
+  .hanging-bow,
+  .bow-sparkle {
+    animation: none;
   }
 }
