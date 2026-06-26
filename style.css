@@ -64,7 +64,7 @@ body.night-theme {
 .theme-toggle {
   position: fixed;
   top: 1rem;
-  left: 1rem;
+  right: clamp(7rem, 10vw, 9rem);
   z-index: 4;
   display: inline-flex;
   align-items: center;
@@ -352,7 +352,8 @@ footer {
 }
 
 header {
-  min-height: 72vh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -613,7 +614,8 @@ footer {
   }
 
   header {
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
   }
 
   .project {
@@ -631,6 +633,10 @@ footer {
 
   .project a {
     width: 100%;
+  }
+
+  .theme-toggle {
+    right: 5.25rem;
   }
 
   .hanging-bow {
