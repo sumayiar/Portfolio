@@ -12,6 +12,10 @@
     #4e8ecb 100%
   );
   --surface: #ffffff;
+  --surface-soft: #fcfcfc;
+  --button-bg: #ffffff;
+  --tag-bg: #f1f1f1;
+  --image-bg: #ffffff;
   --text: #121212;
   --muted: #5b5b5b;
   --border: #dcdcdc;
@@ -39,6 +43,160 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   background-attachment: fixed;
+  transition: background 0.45s ease, color 0.45s ease;
+}
+
+body.night-theme {
+  --bg: linear-gradient(180deg, #070b19 0%, #0d1730 34%, #13264a 68%, #07111f 100%);
+  --surface: rgba(11, 18, 36, 0.92);
+  --surface-soft: rgba(16, 27, 52, 0.9);
+  --button-bg: rgba(17, 29, 56, 0.96);
+  --tag-bg: rgba(255, 255, 255, 0.08);
+  --image-bg: rgba(255, 255, 255, 0.04);
+  --text: #f7f2ff;
+  --muted: #b9c4e6;
+  --border: rgba(217, 225, 255, 0.18);
+  --border-strong: rgba(236, 241, 255, 0.36);
+  --shadow: rgba(0, 0, 0, 0.32);
+  color-scheme: dark;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  background: var(--button-bg);
+  box-shadow: 0 0.75rem 2rem var(--shadow);
+  cursor: pointer;
+  transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--text);
+  transform: translateY(-1px);
+}
+
+.moon-icon {
+  position: relative;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 50%;
+  background: #f7df8a;
+  box-shadow: 0 0 1rem rgba(247, 223, 138, 0.7);
+}
+
+.moon-icon::after {
+  content: "";
+  position: absolute;
+  top: -0.05rem;
+  right: -0.05rem;
+  width: 1.12rem;
+  height: 1.12rem;
+  border-radius: 50%;
+  background: var(--button-bg);
+  opacity: 0.92;
+  transition: background 0.35s ease;
+}
+
+body.night-theme .moon-icon {
+  background: #fff2a8;
+  box-shadow: 0 0 1.25rem rgba(255, 242, 168, 0.95), 0 0 2.5rem rgba(172, 198, 255, 0.42);
+}
+
+.night-sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.45s ease;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.7) 0 1px, transparent 1px),
+    radial-gradient(circle at 28% 38%, rgba(255, 255, 255, 0.42) 0 1px, transparent 1px),
+    radial-gradient(circle at 62% 12%, rgba(255, 255, 255, 0.58) 0 1px, transparent 1px),
+    radial-gradient(circle at 84% 30%, rgba(255, 255, 255, 0.5) 0 1px, transparent 1px),
+    radial-gradient(circle at 48% 72%, rgba(255, 255, 255, 0.44) 0 1px, transparent 1px);
+}
+
+body.night-theme .night-sky {
+  opacity: 1;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 8rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.95));
+  filter: drop-shadow(0 0 0.5rem rgba(207, 224, 255, 0.9));
+  opacity: 0;
+  transform: rotate(-32deg);
+  animation: shootingStar 7.5s ease-in-out infinite;
+}
+
+.shooting-star::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: #ffffff;
+  transform: translateY(-50%);
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.95);
+}
+
+.star-one {
+  top: 12%;
+  left: 82%;
+}
+
+.star-two {
+  top: 28%;
+  left: 68%;
+  animation-delay: 2.2s;
+  animation-duration: 8.6s;
+}
+
+.star-three {
+  top: 6%;
+  left: 48%;
+  animation-delay: 4.8s;
+  animation-duration: 9.2s;
+}
+
+.star-four {
+  top: 44%;
+  left: 90%;
+  animation-delay: 6.4s;
+  animation-duration: 10s;
+}
+
+@keyframes shootingStar {
+  0%,
+  64% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-32deg);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-95vw, 60vh, 0) rotate(-32deg);
+  }
 }
 
 .hanging-bow {
@@ -62,6 +220,10 @@ body {
   width: 1px;
   height: 2rem;
   background: rgba(18, 18, 18, 0.38);
+}
+
+body.night-theme .bow-string {
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .bow-shape {
@@ -286,6 +448,7 @@ header h2 {
   border: 1px solid var(--border);
   border-radius: 1rem;
   box-shadow: 0 10px 30px var(--shadow);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
 
 .project-year {
@@ -327,7 +490,7 @@ header h2 {
   max-width: 42rem;
   border: 1px solid var(--border);
   border-radius: 0.8rem;
-  background: #ffffff;
+  background: var(--image-bg);
 }
 
 .project-mock figcaption {
@@ -347,7 +510,8 @@ header h2 {
   padding: 1.25rem;
   border: 1px solid var(--border);
   border-radius: 0.8rem;
-  background: #fcfcfc;
+  background: var(--surface-soft);
+  transition: background 0.35s ease, border-color 0.35s ease;
 }
 
 .cert-card h3 {
@@ -364,7 +528,7 @@ header h2 {
   margin-top: 1rem;
   border: 1px solid var(--border);
   border-radius: 0.6rem;
-  background: #ffffff;
+  background: var(--image-bg);
 }
 
 .project p + p {
@@ -404,12 +568,13 @@ header h2 {
   padding: 0.75rem 1rem;
   border: 1px solid var(--border-strong);
   border-radius: 0.7rem;
-  background: #ffffff;
+  background: var(--button-bg);
   color: var(--text);
   font-family: var(--font-mono);
   font-size: 0.88rem;
   font-weight: 500;
   text-decoration: none;
+  transition: background 0.35s ease, border-color 0.35s ease, color 0.35s ease;
 }
 
 .project a:hover {
@@ -422,7 +587,7 @@ header h2 {
   margin-top: 1rem;
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
-  background: #f1f1f1;
+  background: var(--tag-bg);
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 500;
@@ -494,7 +659,13 @@ footer {
   }
 
   .hanging-bow,
-  .bow-sparkle {
+  .bow-sparkle,
+  .shooting-star {
     animation: none;
+  }
+
+  .theme-toggle,
+  .night-sky {
+    transition: none;
   }
 }
