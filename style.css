@@ -20,6 +20,8 @@
   --muted: #5b5b5b;
   --border: #dcdcdc;
   --border-strong: #bdbdbd;
+  --lace: rgba(18, 18, 18, 0.34);
+  --lace-soft: rgba(18, 18, 18, 0.12);
   --shadow: rgba(18, 18, 18, 0.06);
   --font-body: "Manrope", "Helvetica Neue", sans-serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
@@ -57,6 +59,8 @@ body.night-theme {
   --muted: #b9c4e6;
   --border: rgba(217, 225, 255, 0.18);
   --border-strong: rgba(236, 241, 255, 0.36);
+  --lace: rgba(255, 245, 255, 0.3);
+  --lace-soft: rgba(255, 245, 255, 0.1);
   --shadow: rgba(0, 0, 0, 0.32);
   color-scheme: dark;
 }
@@ -361,7 +365,36 @@ header {
 }
 
 section {
-  border-top: 1px solid var(--border);
+  border-top: 0;
+}
+
+section::before,
+section::after {
+  content: "";
+  position: absolute;
+  inset: 1.15rem 0.75rem;
+  z-index: 0;
+  border-radius: 1.25rem;
+  pointer-events: none;
+}
+
+section::before {
+  border: 1px solid var(--lace-soft);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+section::after {
+  opacity: 0.72;
+  background:
+    radial-gradient(circle at 0.45rem 0.45rem, transparent 0.28rem, var(--lace) 0.3rem 0.33rem, transparent 0.35rem) top left / 1.25rem 1.25rem repeat-x,
+    radial-gradient(circle at 0.45rem 0.8rem, transparent 0.28rem, var(--lace) 0.3rem 0.33rem, transparent 0.35rem) bottom left / 1.25rem 1.25rem repeat-x,
+    radial-gradient(circle at 0.45rem 0.45rem, transparent 0.28rem, var(--lace) 0.3rem 0.33rem, transparent 0.35rem) top left / 1.25rem 1.25rem repeat-y,
+    radial-gradient(circle at 0.8rem 0.45rem, transparent 0.28rem, var(--lace) 0.3rem 0.33rem, transparent 0.35rem) top right / 1.25rem 1.25rem repeat-y;
+}
+
+section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow,
@@ -639,6 +672,11 @@ footer {
 
   .project {
     padding: 1.25rem;
+  }
+
+  section::before,
+  section::after {
+    inset: 0.85rem 0.45rem;
   }
 
   .cert-grid {
