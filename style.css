@@ -33,6 +33,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
 }
 
 body {
@@ -109,6 +110,44 @@ body.night-theme {
 body.night-theme .moon-icon {
   background: #fff2a8;
   box-shadow: 0 0 1.25rem rgba(255, 242, 168, 0.95), 0 0 2.5rem rgba(172, 198, 255, 0.42);
+}
+
+.site-nav {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  max-width: min(54rem, calc(100vw - 18rem));
+  padding: 0.45rem;
+  overflow-x: auto;
+  gap: 0.25rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--button-bg);
+  background: color-mix(in srgb, var(--button-bg) 86%, transparent);
+  box-shadow: 0 0.75rem 2rem var(--shadow);
+  transform: translateX(-50%);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.site-nav a {
+  flex: 0 0 auto;
+  padding: 0.5rem 0.72rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: var(--tag-bg);
 }
 
 .night-sky {
@@ -641,6 +680,11 @@ footer {
     padding: 1.25rem;
   }
 
+  .site-nav {
+    top: 5.35rem;
+    max-width: calc(100vw - 2rem);
+  }
+
   .cert-grid {
     grid-template-columns: 1fr;
   }
@@ -690,6 +734,7 @@ footer {
   }
 
   .theme-toggle,
+  .site-nav,
   .night-sky {
     transition: none;
   }
