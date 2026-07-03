@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@400;500;600;700;800&display=swap");
 
 :root {
   --bg: linear-gradient(
@@ -21,8 +21,8 @@
   --border: #dcdcdc;
   --border-strong: #bdbdbd;
   --shadow: rgba(18, 18, 18, 0.06);
-  --font-body: "Manrope", "Helvetica Neue", sans-serif;
-  --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+  --font-body: "Merienda", "Comic Sans MS", cursive;
+  --font-mono: "Merienda", "Comic Sans MS", cursive;
 }
 
 * {
