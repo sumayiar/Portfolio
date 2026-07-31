@@ -1,6 +1,6 @@
 # Portfolio
 
-This portfolio presents Sumayia Rashid as a software engineer with a background in UX research, product design, and frontend development.
+This portfolio presents Sumayia Rashid as a graduate student with a background in software engineering, UX research, product design, and frontend development.
 
 ## Visual Direction
 
