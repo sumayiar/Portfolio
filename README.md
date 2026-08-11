@@ -16,6 +16,12 @@ The homepage now highlights:
 - inspiration from her father to study computer science after watching technology evolve over the years
 - personal influences like matcha, Central Park, nature, and hiking
 
+## Work Experience
+
+- `August 2026 - Present` CUNY Graduate Center: Web Editor
+- `2026` DNR Studios: Lead App Development Intern
+- `2024` Hunter College: Student Ambassador
+
 ## Project Timeline
 
 - `2026` Just Cook It
