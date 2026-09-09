@@ -85,6 +85,35 @@ body.night-theme {
   transform: translateY(-1px);
 }
 
+.theme-toggle:focus-visible,
+.site-nav a:focus-visible,
+.skip-link:focus-visible,
+.project a:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 6;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.55rem;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-decoration: none;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 .moon-icon {
   position: relative;
   width: 1.35rem;
@@ -499,6 +528,30 @@ header h2 {
   font-weight: 600;
 }
 
+.project-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.project-heading .project-year {
+  margin-bottom: 0.35rem;
+}
+
+.section-icon {
+  flex: 0 0 auto;
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+  background: var(--image-bg);
+}
+
+body.night-theme .section-icon {
+  filter: invert(1);
+}
+
 .project h3 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -681,6 +734,10 @@ footer {
     max-width: calc(100vw - 2rem);
   }
 
+  body {
+    background-attachment: scroll;
+  }
+
   .cert-grid {
     grid-template-columns: 1fr;
   }
@@ -731,7 +788,8 @@ footer {
 
   .theme-toggle,
   .site-nav,
-  .night-sky {
+  .night-sky,
+  .skip-link {
     transition: none;
   }
 }
