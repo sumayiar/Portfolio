@@ -25,7 +25,7 @@ Static portfolio for Sumayia Rashid, a graduate student and full-stack software 
 
 - `Fall 2026` Machine Learning Research Project: in-progress graduate course project with planned Python analysis, model evaluation, ethics review, final report, code deliverables, and presentation.
 - `2026 - Present` The Advocate: website redesign, web layout, formatting, and production for the CUNY Graduate Center publication.
-- `2026 - Present` Just Cook It: React + Vite, FastAPI, Supabase, Spoonacular, and behavioral UX analysis.
+- `2026` Just Cook It: React + Vite, FastAPI, Supabase, Spoonacular, and behavioral UX analysis; completed May 2026.
 - `2024` DNR Studios: C# and .NET MAUI word game work with MVVM architecture and backend implementation.
 - `2026` SimilarSmiles: Flask, RDKit, ChEMBL, and frontend work for chemical similarity search.
 - `2024` Smart Strength Scheduler: Google Gemini-powered personalized workout planning.
