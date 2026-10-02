@@ -15,7 +15,6 @@ Static portfolio for Sumayia Rashid, a graduate student and full-stack software 
 
 ## Work Experience
 
-- `2026 - Present` Library: Library Assistant
 - `July 2024 - August 2024` DNR Studios: Lead App Development Intern
 - `January 2024 - November 2024` Hunter College Computer Science Department: Teaching Assistant
 - `July 2022 - August 2022` Google: CSSI Scholar
@@ -24,6 +23,7 @@ Static portfolio for Sumayia Rashid, a graduate student and full-stack software 
 ## Selected Work
 
 - `Fall 2026` Machine Learning Research Project: in-progress graduate course project with planned Python analysis, model evaluation, ethics review, final report, code deliverables, and presentation.
+- `Coming Soon` Data Mining Project: upcoming graduate course project from Advanced Data Mining with AI Agents.
 - `2026 - Present` The Advocate: website redesign, web layout, formatting, and production for the CUNY Graduate Center publication.
 - `2026` Just Cook It: React + Vite, FastAPI, Supabase, Spoonacular, and behavioral UX analysis; completed May 2026.
 - `2024` DNR Studios: C# and .NET MAUI word game work with MVVM architecture and backend implementation.
